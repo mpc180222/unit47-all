@@ -1,0 +1,27 @@
+ Recursive-Tree-Search(x, key)
+   if x = NIL or key = x.key then
+     return x
+   if key < x.key then
+     return Recursive-Tree-Search(x.left, key)
+   else
+     return Recursive-Tree-Search(x.right, key)
+   end if
+
+
+
+function create tree(1, 2)
+stack[3]
+root = 1
+current = root
+current.right = 2
+current = current.right
+next = stack.pop
+current.right =3
+
+function create tree(1, 3)
+stack[2]
+current.right=3
+current .left =2
+
+create tree(2, 1)
+stack = 3

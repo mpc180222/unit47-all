@@ -1,0 +1,15 @@
+  maxDepth(path = 0) {
+    if (this.root === null) return path;
+    let stack = [this.root];
+      while(stack.length){
+      let current = stack.pop();
+      if(current.left !== null || current.right !== null) { 
+        path = path + 1;
+
+        if(current.left !== null) stack.push(current.left);
+        if(current.right !== null) stack.push(current.right);
+      
+      }
+    }
+    return path+1;
+  }

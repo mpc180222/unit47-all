@@ -1,0 +1,54 @@
+function test(current1,current2){
+    let arr = []
+
+while (current1 && current2 !== null){
+console.log(arr);
+console.log(current1);
+console.log(current2);
+if(current1.val > current2.val){
+arr.push(current2);
+current2=current2.next;
+}
+
+else if(current2.val > current1.val){
+arr.push(current1);
+current1=current1.next;
+}
+
+else if (current2.val === current1.val){
+arr.push(current1);
+arr.push(current2);
+current1=current1.next;
+current2=current2.next;
+
+}
+}
+
+
+if(current2 === null){
+while(current1 !== null){
+arr.push(current1);
+current1=current1.next
+}}
+
+if(current1 === null){
+while(current2 !== null){
+arr.push(current2);
+current2=current2.next
+}
+}
+return arr[0]
+
+
+
+
+let a = new LinkedList([5,15,22])
+let b = new LinkedList([2,4,17])
+let current1= a.head
+let current2 = b.head
+
+
+
+
+5     15    22
+2     4     17

@@ -1,0 +1,63 @@
+n = 3
+how many unique trees can you create with nodes that go from 1 to 3
+
+its some kind of recursion or loop
+start with 1 as the root
+1 will have nothing on the left, then 2 on the right, then every other number up until n on the right
+2 wiill then be the root and have 1 on the left
+
+'current' should be 1 at first, and have a recursive function that creates a binary tree, then increment current
+**problem** how does your recursion
+
+
+
+function createTrees(n){
+let currentRoot = 1;
+let currentInt = currentRoot + 1;
+let treeCount = 0;
+
+while(currentRoot <=n){
+
+let root = new Node(currentRoot)
+let currentNode = root
+
+while(currentInt <= n){
+
+if(currentInt < currentNode.val) {
+currentNode.left = new Node(currentInt);
+currentNode = currentNode.left;
+currentInt = currentInt+1;}
+
+if(currentInt > currentNode.val){ 
+currentNode.right = new Node(currentInt);
+currentNode = currentNode.right;
+currentInt = currentInt + 1;
+}}
+
+treeCount = treeCount + 1;
+
+}
+	
+
+
+
+function createSingleTree(n, currentInt, currentRoot){
+let root = new Node(currentRoot)
+let currentNode = root
+while(currentInt <= n){
+
+if(currentInt < currentNode.val) {
+currentNode.left = new Node(currentInt);
+currentNode = currentNode.left;
+currentInt = currentInt+1;}
+
+if(currentInt > currentNode.val){ 
+currentNode.right = new Node(currentInt);
+currentNode = currentNode.right;
+currentInt = currentInt + 1;
+}
+console.log(currentInt)
+}}
+
+
+
